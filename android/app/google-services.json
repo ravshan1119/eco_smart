@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "163377557150",
+    "project_id": "camping-9b195",
+    "storage_bucket": "camping-9b195.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163377557150:android:56da4f97a6cb022efbd58f",
+        "android_client_info": {
+          "package_name": "com.ecosmart.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163377557150-q3ov8mkvv67frfcqdapngcnsuadnbuj0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ecosmart.app",
+            "certificate_hash": "b1e66d1cbaf75eb9f1379a9aa215ddf8d8022399"
+          }
+        },
+        {
+          "client_id": "163377557150-53d5dbs85e0b16hu2d1b5terciukmd11.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ9q68SVP9fodpTGwGvf5gVFxYPvnOLYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163377557150-53d5dbs85e0b16hu2d1b5terciukmd11.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "163377557150-do66setkqngcv2kla5hrrvf5ktn3bhdf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ecoSmart"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
