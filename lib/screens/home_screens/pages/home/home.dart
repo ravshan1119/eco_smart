@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eco_smart/core/app_icons.dart';
 import 'package:eco_smart/core/colors.dart';
 import 'package:eco_smart/core/extension.dart';
+import 'package:eco_smart/core/localization/locale_keys.dart';
 import 'package:eco_smart/core/route/navigator.dart';
 import 'package:eco_smart/core/route/routes_const.dart';
 import 'package:eco_smart/data/injection.dart';
@@ -117,7 +119,7 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextWidget(
-                      text: "Salom, ${getIt<LocalStorage>().getPhone()} 👋",
+                      text: "${LocaleKeys.hello.tr()}, ${getIt<LocalStorage>().getPhone()} 👋",
                       textColor: Colors.black,
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
@@ -153,7 +155,7 @@ class _HomeState extends State<Home> {
                     Padding(
                       padding: const EdgeInsets.only(top: 16.0, left: 16),
                       child: TextWidget(
-                        text: "Keraksiz buyumingiz haqida bizga xabar bering!",
+                        text: LocaleKeys.startText.tr(),
                         textColor: Colors.white,
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
@@ -195,18 +197,23 @@ class _HomeState extends State<Home> {
                 displayProgress: true,
                 storyItemList: [
                   StoryItem(
-                    name: "1nd",
+                    name: "🌱",
                     thumbnail: NetworkImage(
-                      "https://www.shareicon.net/data/512x512/2017/03/29/881758_cup_512x512.png",
+                      "https://firebasestorage.googleapis.com/v0/b/camping-9b195.appspot.com/o/_%20(1).jpg?alt=media&token=c03f41d2-eee4-4fd2-9d6f-defc7006f035",
                     ),
                     stories: [
                       Scaffold(
                         body: Center(
-                          child: Text(
-                            "That's it, Folks !",
-                            style: TextStyle(
-                              color: Color(0xff777777),
-                              fontSize: 25,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Text(
+                              """🌱 Tabiatni asrash – kelajak avlodga sovg‘a!
+Har bir ekilgan daraxt, har bir tejangan tomchi suv – bizning farzandlarimiz uchun toza muhit demak. 🤍 #YashilKelajak""",
+                              style: TextStyle(
+                                color: Color(0xff777777),
+                                fontSize: 25,
+                              ),
                             ),
                           ),
                         ),
@@ -214,18 +221,51 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                   StoryItem(
-                    name: "2nd",
+                    name: "Orolimiz",
                     thumbnail: NetworkImage(
-                      "https://www.shareicon.net/data/512x512/2017/03/29/881758_cup_512x512.png",
+                      "https://firebasestorage.googleapis.com/v0/b/camping-9b195.appspot.com/o/jason-mavrommatis-0MEMXMOy--Y-unsplash.jpg?alt=media&token=2387529c-5d2a-4fab-b3b7-30a874de6099",
+                    ),
+                    stories: [
+                      Scaffold(
+                          body: Stack(
+                        children: [
+                          Center(
+                            child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16.0),
+                                child: Text(
+                                  """
+💧 Orol dengizi—yo‘qolib borayotgan mo‘’jiza
+Bir paytlar ulkan dengiz bo‘lgan hudud bugun qum cho‘liga aylangan. Suvni tejash va tabiatni himoya qilish hammamizning burchimiz! 🚰 #Ekologiya
+                              """,
+                                  style: TextStyle(
+                                    color: Color(0xff777777),
+                                    fontSize: 25,
+                                  ),
+                                )),
+                          )
+                        ],
+                      )),
+                    ],
+                  ),
+                  StoryItem(
+                    name: "🌍",
+                    thumbnail: NetworkImage(
+                      "https://firebasestorage.googleapis.com/v0/b/camping-9b195.appspot.com/o/s-tsuchiya-gxIg8FcDIC8-unsplash.jpg?alt=media&token=874639a0-3036-42a5-8564-0deb54b9ab06",
                     ),
                     stories: [
                       Scaffold(
                         body: Center(
-                          child: Text(
-                            "That's it, Folks !",
-                            style: TextStyle(
-                              color: Color(0xff777777),
-                              fontSize: 25,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Text(
+                              """🌍 O‘zbekiston ekologiyasi haqida o‘ylab ko‘rdikmi?
+Har yili minglab daraxtlar kesiladi, havomiz ifloslanmoqda. Kelajagimizni asrash o‘z qo‘limizda! 🍃 #TabiatniAsraylik""",
+                              style: TextStyle(
+                                color: Color(0xff777777),
+                                fontSize: 25,
+                              ),
                             ),
                           ),
                         ),
@@ -233,18 +273,23 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                   StoryItem(
-                    name: "3nd",
+                    name: "UZB",
                     thumbnail: NetworkImage(
-                      "https://www.shareicon.net/data/512x512/2017/03/29/881758_cup_512x512.png",
+                      "https://firebasestorage.googleapis.com/v0/b/camping-9b195.appspot.com/o/_%20(1).jpg?alt=media&token=c03f41d2-eee4-4fd2-9d6f-defc7006f035",
                     ),
                     stories: [
                       Scaffold(
                         body: Center(
-                          child: Text(
-                            "That's it, Folks !",
-                            style: TextStyle(
-                              color: Color(0xff777777),
-                              fontSize: 25,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Text(
+                              """🌿 Tabiat bizga ishonib topshirilgan!
+Har kuni atrof-muhitga e’tibor bering: chiqindilarni saralang, plastikdan kamroq foydalaning, daraxt eking! Kelajak bizdan minnatdor bo‘ladi! 🌎💚 #TozaO‘zbekiston""",
+                              style: TextStyle(
+                                color: Color(0xff777777),
+                                fontSize: 25,
+                              ),
                             ),
                           ),
                         ),
@@ -252,37 +297,23 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                   StoryItem(
-                    name: "4nd",
+                    name: "Eco-Smart",
                     thumbnail: NetworkImage(
-                      "https://www.shareicon.net/data/512x512/2017/03/29/881758_cup_512x512.png",
+                      "https://firebasestorage.googleapis.com/v0/b/camping-9b195.appspot.com/o/_%20(1).jpg?alt=media&token=c03f41d2-eee4-4fd2-9d6f-defc7006f035",
                     ),
                     stories: [
                       Scaffold(
                         body: Center(
-                          child: Text(
-                            "That's it, Folks !",
-                            style: TextStyle(
-                              color: Color(0xff777777),
-                              fontSize: 25,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  StoryItem(
-                    name: "5nd",
-                    thumbnail: NetworkImage(
-                      "https://www.shareicon.net/data/512x512/2017/03/29/881758_cup_512x512.png",
-                    ),
-                    stories: [
-                      Scaffold(
-                        body: Center(
-                          child: Text(
-                            "That's it, Folks !",
-                            style: TextStyle(
-                              color: Color(0xff777777),
-                              fontSize: 25,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Text(
+                              """🔥 Havoni ifloslantirish – o‘z kelajagimizni yo‘q qilish demak!
+Ishlatilgan gazlar, chiqindilar, kesilgan daraxtlar – bularning hammasi havo sifatiga ta’sir qiladi. Nafas oladigan havomiz uchun kurashaylik! 🍃 #TozaHavo""",
+                              style: TextStyle(
+                                color: Color(0xff777777),
+                                fontSize: 25,
+                              ),
                             ),
                           ),
                         ),

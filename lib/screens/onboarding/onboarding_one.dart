@@ -25,7 +25,7 @@ class _OnboardingOnePageState extends State<OnboardingOnePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextWidget(
-              text: "Eco mahsulotlaringizni daromadga aylantiring!",
+              text: LocaleKeys.onboardingOneTitle.tr(),
               fontSize: 32,
               fontWeight: FontWeight.w700,
               textColor: Color(0xFF101010),
@@ -35,7 +35,7 @@ class _OnboardingOnePageState extends State<OnboardingOnePage> {
               textColor: Color(0xFF101010),
               fontWeight: FontWeight.w400,
               fontSize: 16,
-              text: "Uyda yig‘ilib qolgan plastik, temir va qog‘oz buyumlarni yig‘ib, bizning platformamiz orqali sotib, qo‘shimcha daromad oling.",
+              text: LocaleKeys.onboardingOne.tr(),
             ),
             24.h,
             // Image.asset(AppImages.onBoardingOne),

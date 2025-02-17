@@ -1,8 +1,11 @@
 {
   "language": "Til",
-  "onboarding_one": "Uyingizni narxini bilib oling",
-  "onboarding_two": "Uyingni tez va oson sotsangiz bo'ladi",
-  "onboarding_three": "Yangi uylarga xohlaganingizcha ega bo'ling",
+  "onboarding_one": "Uyda yig‘ilib qolgan plastik, temir va qog‘oz buyumlarni yig‘ib, bizning platformamiz orqali sotib, qo‘shimcha daromad oling.",
+  "onboarding_two": "Maxsus kalkulyator orqali chiqindilaringizning qancha daromad olib kelishini bilib oling.",
+  "onboarding_three": "Geo-lokatsiya orqali yaqin atrofdagi yig‘ish punktlarini osongina toping va xaritadan yo‘nalishingizni belgilang.",
+  "onboarding_one_title" : "Eco mahsulotlaringizni daromadga aylantiring!",
+  "onboarding_two_title" : "Daromadingizni hisoblang!",
+  "onboarding_three_title" : "Eng yaqin punktni toping!",
   "onboarding": "Uy haqidagi ma'lumotlarni to'ldiring va uyingizni haqiqiy narxini bilib oling",
   "continue": "Davom eting",
   "login_text": "Telefon raqami bilan kirish",
@@ -110,7 +113,16 @@
   "my_publish_houses" : "Mening e'lonlarim",
   "remove_publish_home" : "E'lonni o'chirishga ishonchingiz komilmi?",
   "delete" : "O'chirish",
-  "all" : "Barchasi"
+  "all" : "Barchasi",
+
+
+  "register" : "Ro'yxatdan o'tish",
+  "password" : "Parol",
+  "hello" : "Salom",
+  "start_text" : "Keraksiz buyumingiz haqida bizga xabar bering!",
+  "home" : "Bosh sahifa",
+  "cal" : "Kalkulator",
+  "chat" : "Chat"
 
 
 }

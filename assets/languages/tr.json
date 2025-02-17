@@ -1,8 +1,11 @@
 {
   "language": "Dil",
-  "onboarding_one": "Ev fiyatınızı öğrenin",
-  "onboarding_two": "Evinizi hızlı ve kolay bir şekilde satın",
-  "onboarding_three": "İstediğiniz gibi yeni evler bulun",
+  "onboarding_one": "Evde biriken plastik, metal ve kağıt eşyalarınızı toplayın ve platformumuz üzerinden satarak ek gelir elde edin.",
+  "onboarding_two": "Özel hesap makinesini kullanarak atıklarınızdan ne kadar gelir elde edeceğinizi öğrenin.",
+  "onboarding_three": "Coğrafi konumunuzu belirleyerek yakınınızdaki toplama noktalarını kolayca bulun ve rotanızı haritalayın.",
+  "onboarding_one_title" : "Eko ürünlerinizi kazanca dönüştürün!",
+  "onboarding_two_title" : "Gelirinizi hesaplayın!",
+  "onboarding_three_title" : "En yakın noktayı bul!",
   "onboarding": "Evinizle ilgili bilgileri doldurun ve evinizin gerçek fiyatını öğrenin",
   "continue": "Devam et",
   "login_text": "Telefon Numarası ile Giriş",
@@ -110,7 +113,20 @@
   "my_publish_houses" : "Duyurularım",
   "remove_publish_home" : "Bu reklamı silmek istediğinizden emin misiniz?",
   "delete" : "Sil",
-  "all" : "Her şey"
+  "all" : "Her şey",
+
+
+
+  "register" : "Üye olmak",
+  "password" : "Sifre",
+  "hello" : "Merhaba",
+  "start_text" : "İstenmeyen eşyanızı bize anlatın!",
+  "home" : "Ev",
+  "cal" : "Hesaplama",
+  "chat" : "Sohbet"
+
+
+
 
 
 

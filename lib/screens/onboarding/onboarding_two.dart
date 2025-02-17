@@ -24,7 +24,7 @@ class _OnboardingTwoPageState extends State<OnboardingTwoPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextWidget(
-              text: "Daromadingizni hisoblang!",
+              text: LocaleKeys.onboardingTwoTitle.tr(),
               fontSize: 32,
               fontWeight: FontWeight.w700,
               textColor: Color(0xFF101010),
@@ -34,7 +34,7 @@ class _OnboardingTwoPageState extends State<OnboardingTwoPage> {
               textColor: Color(0xFF101010),
               fontWeight: FontWeight.w400,
               fontSize: 16,
-              text: "Maxsus kalkulyator orqali chiqindilaringizning qancha daromad olib kelishini bilib oling.",
+              text: LocaleKeys.onboardingTwo.tr(),
             ),
             24.h,
             // Image.asset(AppImages.onBoardingTwo),

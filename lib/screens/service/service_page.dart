@@ -10,6 +10,7 @@ import 'package:eco_smart/screens/common/my_elevated_button.dart';
 import 'package:eco_smart/screens/common/text_form_field.dart';
 import 'package:eco_smart/screens/common/text_widget.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -387,7 +388,41 @@ class _ServicePageState extends State<ServicePage> {
                       // Call the user's CollectionReference to add a new user
                       await orders.add(data).then((value) {
                         flash("Qabul qilindi", Colors.green);
+
                         navigator.pop();
+
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return CupertinoAlertDialog(
+                              title: TextWidget(
+                                text: "Operatorlar sizga aloqaga chiqadi",
+                                textColor: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                              content: TextWidget(
+                                text: "Ushbu harakatingizni qadirlaymiz!",
+                                textColor: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                              ),
+                              actions: [
+                                CupertinoDialogAction(
+                                  child: TextWidget(
+                                    text: "Ok",
+                                    textColor: Colors.black,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16,
+                                  ),
+                                  onPressed: () {
+                                    navigator.pop();
+                                  },
+                                ),
+                              ],
+                            );
+                          },
+                        );
                       }).catchError(
                           (error) => print("Failed to add user: $error"));
 

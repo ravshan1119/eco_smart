@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:eco_smart/core/localization/locale_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -44,10 +46,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ),
         child: Row(
           children: [
-            _item("Bosh sahifa", 0, state.index == 0),
-            _item("Kalkulyator", 1, state.index == 1),
-            _item("Chat", 2, state.index == 2),
-            _item("Profile", 3, state.index == 3),
+            _item(LocaleKeys.home.tr(), 0, state.index == 0),
+            _item(LocaleKeys.cal.tr(), 1, state.index == 1),
+            _item(LocaleKeys.chat.tr(), 2, state.index == 2),
           ],
         ),
       );
@@ -94,12 +95,10 @@ List<String> items = [
   AppIcons.home,
   AppIcons.calculation,
   AppIcons.shop,
-  AppIcons.profile,
 ];
 
 List<String> itemsColor = [
   AppIcons.homeColorFull,
   AppIcons.calculationColorFull,
   AppIcons.shopColorFull,
-  AppIcons.profileColorFull,
 ];

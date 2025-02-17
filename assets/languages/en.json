@@ -1,8 +1,11 @@
 {
   "language": "Language",
-  "onboarding_one" : "Know the price of your house",
-  "onboarding_two" : "Sell your house fast and easily",
-  "onboarding_three" : "Find new houses as you wish",
+  "onboarding_one" : "Earn extra income by collecting plastic, metal and paper items that accumulate at home and sell them through our platform.",
+  "onboarding_two" : "Find out how much income your waste will generate using a special calculator.",
+  "onboarding_three" : "Easily find nearby collection points via geolocation and map your route.",
+  "onboarding_one_title" : "Turn your eco products into income!",
+  "onboarding_two_title" : "Calculate your income!",
+  "onboarding_three_title" : "Find the nearest point!",
   "onboarding": "Fill the information of your house and know the real price of your house",
   "continue": "Continue",
   "login_text": "Login with Phone Number",
@@ -110,7 +113,19 @@
   "my_publish_houses" : "My announcements",
   "remove_publish_home" : "Are you sure you want to delete this ad?",
   "delete" : "Delete",
-  "all" : "Everything"
+  "all" : "Everything",
+
+
+
+  "register" : "Sign up",
+  "password" : "Password",
+  "hello" : "Hello",
+  "start_text" : "Tell us about your unwanted item!",
+  "home" : "Home",
+  "cal" : "Calculator",
+  "chat" : "Chat"
+
+
 
 
 

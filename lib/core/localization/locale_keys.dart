@@ -3,6 +3,9 @@ abstract class LocaleKeys {
   static const onboardingOne = "onboarding_one";
   static const onboardingTwo = "onboarding_two";
   static const onboardingThree = "onboarding_three";
+  static const onboardingOneTitle = "onboarding_one_title";
+  static const onboardingTwoTitle = "onboarding_two_title";
+  static const onboardingThreeTitle = "onboarding_three_title";
   static const onboarding = "onboarding";
   static const continueButton = "continue";
   static const loginText = "login_text";
@@ -113,4 +116,15 @@ abstract class LocaleKeys {
   static const removePublishHome = "remove_publish_home";
   static const delete = "delete";
   static const all = "all";
+
+
+
+
+  static const register = "register";
+  static const password = "password";
+  static const hello = "hello";
+  static const startText = "start_text";
+  static const home = "home";
+  static const cal = "cal";
+  static const chat = "chat";
 }

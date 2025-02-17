@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:eco_smart/core/app_icons.dart';
 import 'package:eco_smart/core/extension.dart';
+import 'package:eco_smart/core/localization/locale_keys.dart';
 import 'package:eco_smart/core/route/navigator.dart';
 import 'package:eco_smart/core/route/routes_const.dart';
 import 'package:eco_smart/data/injection.dart';
@@ -42,7 +44,7 @@ class _LoginState extends State<Login> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextWidget(
-            text: "Ro'yxatdan o'tish",
+            text: LocaleKeys.register.tr(),
             textColor: Colors.black,
             fontWeight: FontWeight.w600,
             fontSize: 20,
@@ -64,7 +66,8 @@ class _LoginState extends State<Login> {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: MyTextFormField(
                 controller: controllerPassword,
-                hintText: "Password",
+                hintText: LocaleKeys.password.tr(),
+                textInputAction: TextInputAction.next,
                 radius: 6),
           ),
           10.h,
@@ -72,66 +75,11 @@ class _LoginState extends State<Login> {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: MyTextFormField(
                 controller: controllerConfirm,
-                hintText: "Confirm password",
+                hintText: LocaleKeys.confirmPassword.tr(),
+                textInputAction: TextInputAction.done,
                 radius: 6),
           ),
-          Spacer(),
-          MyElevatedButton(
-              width: MediaQuery.of(context).size.width / 2,
-              height: 28,
-              radius: 6,
-              onTap: () async {
-                setState(() {
-                  isLoading = true;
-                });
-                await _apiClient.signInWithGoogle().then(
-                  (value) {
-                    if (value.user != null) {
-                      flash("Tizimga muvafaqqiyatli kirildi", Colors.green);
-                      getIt<LocalStorage>()
-                          .setToken(value.credential?.accessToken ?? '');
-                      getIt<LocalStorage>()
-                          .setPhone(value.user?.displayName ?? '');
-
-                      navigator.pushNamedAndRemoveUntil(
-                        RouteList.homeScreen,
-                        (route) => false,
-                      );
-                    } else {
-                      flash(
-                          "Kutilmagan xatolik yuz berdi, qaytadan urunib ko'ring",
-                          Colors.red);
-                    }
-                    setState(() {
-                      isLoading = false;
-                    });
-                  },
-                );
-              },
-              primaryColor: Colors.white,
-              child: isLoading
-                  ? Center(
-                      child: Loader(
-                        color: Colors.white,
-                      ),
-                    )
-                  : Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextWidget(
-                          text: "Google",
-                          textColor: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                        ),
-                        Image.asset(
-                          AppImages.google,
-                          height: 18,
-                          width: 18,
-                        ),
-                      ],
-                    )),
-          Spacer(),
+          50.h,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: MyElevatedButton(
@@ -187,7 +135,7 @@ class _LoginState extends State<Login> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           TextWidget(
-                            text: "Login",
+                            text: LocaleKeys.register.tr(),
                             textColor: Colors.white,
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
@@ -195,7 +143,63 @@ class _LoginState extends State<Login> {
                         ],
                       )),
           ),
-          50.h,
+          Spacer(),
+          MyElevatedButton(
+              width: MediaQuery.of(context).size.width - 32,
+              height: 36,
+              radius: 6,
+              onTap: () async {
+                setState(() {
+                  isLoading = true;
+                });
+                await _apiClient.signInWithGoogle().then(
+                  (value) {
+                    if (value.user != null) {
+                      flash("Tizimga muvafaqqiyatli kirildi", Colors.green);
+                      getIt<LocalStorage>()
+                          .setToken(value.credential?.accessToken ?? '');
+                      getIt<LocalStorage>()
+                          .setPhone(value.user?.displayName ?? '');
+
+                      navigator.pushNamedAndRemoveUntil(
+                        RouteList.homeScreen,
+                        (route) => false,
+                      );
+                    } else {
+                      flash(
+                          "Kutilmagan xatolik yuz berdi, qaytadan urunib ko'ring",
+                          Colors.red);
+                    }
+                    setState(() {
+                      isLoading = false;
+                    });
+                  },
+                );
+              },
+              primaryColor: Colors.white,
+              child: isLoading
+                  ? Center(
+                      child: Loader(
+                        color: Colors.white,
+                      ),
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextWidget(
+                          text: "Google",
+                          textColor: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                        ),
+                        Image.asset(
+                          AppImages.google,
+                          height: 18,
+                          width: 18,
+                        ),
+                      ],
+                    )),
+          70.h,
         ],
       ),
     );

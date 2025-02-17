@@ -24,7 +24,7 @@ class _OnboardingThreePageState extends State<OnboardingThreePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextWidget(
-              text: "Eng yaqin punktni toping!",
+              text: LocaleKeys.onboardingThreeTitle.tr(),
               fontSize: 32,
               fontWeight: FontWeight.w700,
               textColor: Color(0xFF101010),
@@ -34,7 +34,7 @@ class _OnboardingThreePageState extends State<OnboardingThreePage> {
               textColor: Color(0xFF101010),
               fontWeight: FontWeight.w400,
               fontSize: 16,
-              text: "Geo-lokatsiya orqali yaqin atrofdagi yig‘ish punktlarini osongina toping va xaritadan yo‘nalishingizni belgilang.",
+              text: LocaleKeys.onboardingThree.tr(),
             ),
             24.h,
             // Image.asset(AppImages.onBoardingThree),
