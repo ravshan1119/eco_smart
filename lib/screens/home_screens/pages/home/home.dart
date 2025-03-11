@@ -118,13 +118,34 @@ class _HomeState extends State<Home> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextWidget(
-                      text: "${LocaleKeys.hello.tr()}, ${getIt<LocalStorage>().getPhone()} 👋",
-                      textColor: Colors.black,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      overFlow: TextOverflow.ellipsis,
-                      maxLines: 1,
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        shape: BoxShape.rectangle,
+                        border: Border.all(color: Color(0xFF00697C), width: 1),
+                      ),
+                      child: Material(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: () {
+                            navigator.pushNamed(RouteList.profile);
+                          },
+                          borderRadius: BorderRadius.circular(12),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextWidget(
+                              text:
+                                  "${LocaleKeys.hello.tr()}, ${getIt<LocalStorage>().getPhone()} 👋",
+                              textColor: Colors.black,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              overFlow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                     IconButton(
                       splashRadius: 24,
@@ -167,20 +188,20 @@ class _HomeState extends State<Home> {
                         height: 40,
                         width: size.width / 2,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
+                          borderRadius: BorderRadius.circular(12),
                           color: Colors.white,
                         ),
                         child: Material(
-                          borderRadius: BorderRadius.circular(16),
+                          borderRadius: BorderRadius.circular(12),
                           color: Colors.transparent,
                           child: InkWell(
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(12),
                             onTap: () {
                               navigator.pushNamed(RouteList.service);
                             },
                             child: Center(
                               child: TextWidget(
-                                  text: "Start",
+                                  text: LocaleKeys.start.tr(),
                                   textColor: Colors.black,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 16),

@@ -40,14 +40,16 @@ class _LoginState extends State<Login> {
         elevation: 0,
         toolbarHeight: 0,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: ListView(
         children: [
-          TextWidget(
-            text: LocaleKeys.register.tr(),
-            textColor: Colors.black,
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: TextWidget(
+              text: LocaleKeys.register.tr(),
+              textColor: Colors.black,
+              fontWeight: FontWeight.w600,
+              fontSize: 20,
+            ),
           ),
           20.h,
           Padding(
@@ -143,62 +145,65 @@ class _LoginState extends State<Login> {
                         ],
                       )),
           ),
-          Spacer(),
-          MyElevatedButton(
-              width: MediaQuery.of(context).size.width - 32,
-              height: 36,
-              radius: 6,
-              onTap: () async {
-                setState(() {
-                  isLoading = true;
-                });
-                await _apiClient.signInWithGoogle().then(
-                  (value) {
-                    if (value.user != null) {
-                      flash("Tizimga muvafaqqiyatli kirildi", Colors.green);
-                      getIt<LocalStorage>()
-                          .setToken(value.credential?.accessToken ?? '');
-                      getIt<LocalStorage>()
-                          .setPhone(value.user?.displayName ?? '');
+          100.h,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: MyElevatedButton(
+                width: MediaQuery.of(context).size.width - 32,
+                height: 36,
+                radius: 6,
+                onTap: () async {
+                  setState(() {
+                    isLoading = true;
+                  });
+                  await _apiClient.signInWithGoogle().then(
+                    (value) {
+                      if (value.user != null) {
+                        flash("Tizimga muvafaqqiyatli kirildi", Colors.green);
+                        getIt<LocalStorage>()
+                            .setToken(value.credential?.accessToken ?? '');
+                        getIt<LocalStorage>()
+                            .setPhone(value.user?.displayName ?? '');
 
-                      navigator.pushNamedAndRemoveUntil(
-                        RouteList.homeScreen,
-                        (route) => false,
-                      );
-                    } else {
-                      flash(
-                          "Kutilmagan xatolik yuz berdi, qaytadan urunib ko'ring",
-                          Colors.red);
-                    }
-                    setState(() {
-                      isLoading = false;
-                    });
-                  },
-                );
-              },
-              primaryColor: Colors.white,
-              child: isLoading
-                  ? Center(
-                      child: Loader(
-                        color: Colors.white,
-                      ),
-                    )
-                  : Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextWidget(
-                          text: "Google",
-                          textColor: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
+                        navigator.pushNamedAndRemoveUntil(
+                          RouteList.homeScreen,
+                          (route) => false,
+                        );
+                      } else {
+                        flash(
+                            "Kutilmagan xatolik yuz berdi, qaytadan urunib ko'ring",
+                            Colors.red);
+                      }
+                      setState(() {
+                        isLoading = false;
+                      });
+                    },
+                  );
+                },
+                primaryColor: Colors.white,
+                child: isLoading
+                    ? Center(
+                        child: Loader(
+                          color: Colors.white,
                         ),
-                        Image.asset(
-                          AppImages.google,
-                          height: 18,
-                          width: 18,
-                        ),
-                      ],
-                    )),
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TextWidget(
+                            text: "Google",
+                            textColor: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12,
+                          ),
+                          Image.asset(
+                            AppImages.google,
+                            height: 18,
+                            width: 18,
+                          ),
+                        ],
+                      )),
+          ),
           70.h,
         ],
       ),

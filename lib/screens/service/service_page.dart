@@ -42,6 +42,10 @@ class _ServicePageState extends State<ServicePage> {
       'type': 'Plastik',
       'id': 4,
     },
+    {
+      'type': 'Boshqa (istalgan buyum, jihoz v.h)',
+      'id': 5,
+    },
   ];
   List<Map<String, dynamic>> listService = <Map<String, dynamic>>[
     {
@@ -343,33 +347,20 @@ class _ServicePageState extends State<ServicePage> {
 
                       // Create a storage reference from our app
                       final storageRef = FirebaseStorage.instance.ref();
+                      // debugPrint("gogogo images: $_images");
 
                       _images.forEach(
                         (element) async {
-                          // Create a reference to "mountains.jpg"
-                          final mountainsRef =
-                              storageRef.child("${element.path}.jpg");
-
-// Create a reference to 'images/mountains.jpg'
-                          final mountainImagesRef =
-                              storageRef.child("images/${element.path}.jpg");
-
-// While the file names are the same, the references point to different files
-                          assert(mountainsRef.name == mountainImagesRef.name);
-                          assert(mountainsRef.fullPath !=
-                              mountainImagesRef.fullPath);
-
-                          Directory appDocDir =
-                              await getApplicationDocumentsDirectory();
-                          String filePath =
-                              '${appDocDir.absolute}/${element.path}.jpg';
-                          File file = File(filePath);
-
-                          try {
-                            await mountainsRef.putFile(file);
-                          } on FirebaseException catch (e) {
-                            print(e);
-                          }
+                          Directory tempDir = await getTemporaryDirectory();
+                          String newPath = '${tempDir.path}/tempImage.jpg';
+                          File newFile = await File(element.path).copy(newPath);
+                          await storageRef.putFile(newFile).then(
+                            (p0) {
+                              if (p0.state == TaskState.success) {
+                                flash("Uploaded", Colors.green);
+                              }
+                            },
+                          );
                         },
                       );
 

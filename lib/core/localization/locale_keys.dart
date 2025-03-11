@@ -127,4 +127,5 @@ abstract class LocaleKeys {
   static const home = "home";
   static const cal = "cal";
   static const chat = "chat";
+  static const start = "start";
 }

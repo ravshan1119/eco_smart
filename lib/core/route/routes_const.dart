@@ -9,4 +9,6 @@ class RouteList {
   static const String notifications = "/notifications";
   static const String login = "/login";
   static const String service = "/service";
+  static const String profile = "/profile";
+  static const String languageP = "/languageP";
 }
